@@ -1,0 +1,126 @@
+/**
+ * @apiDefine NotFoundError
+ *
+ * @apiError ObjectFound The id of the Object was not found.
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 404 Not Found
+ *     {
+ *       "error": "NotFound"
+ *     }
+ */
+
+/**
+ * @api {get} /wp-json/wc/v1/products/?access_token=:token Get All products
+ * @apiVersion 0.0.1
+ * @apiName GetAllProduct
+ * @apiGroup Product
+ * @apiPermission customer admin
+ *
+ * 
+ *
+ * @apiExample Example usage:
+ * curl https://example.com/wp-json/wc/v1/products/ \access_token= 
+ * @apiSuccess {Object[]} products        List of Products.
+ * @apiSuccess {Number}   products.id            		The Product-ID.
+ * @apiSuccess {String}   products.name    				The Product-Name.
+ * @apiSuccess {String}   products.description   		The Product-Description.
+ * @apiSuccess {String}   products.short_description 	The Product-short description
+ * @apiSuccess {Number}   products.price				The Product-Price
+ * @apiSuccess {Number}   products.regular_price		The Product-regular price
+ * @apiSuccess {Object[]} products.images				The Product-Images
+ * @apiSuccess {Number}   products.images.id			The Product-Images ID
+ * @apiSuccess {Number}   products.images.src			The Product-Images src
+ *
+ * @apiError NoAccessRight Only authenticated Customers and Admins can access the data.
+ * 
+ *
+ * @apiUse NotFoundError
+ */
+
+ function GetAllProduct() { return; }
+
+/**
+ * @api {get} /wp-json/wc/v1/products/:id?access_token=:token Retrieve a product
+ * @apiVersion 0.0.1
+ * @apiName GetProduct
+ * @apiGroup Product
+ * @apiPermission customer admin
+ *
+ *
+ * @apiParam {Number} id The Product-ID.
+ *
+ * @apiExample Example usage:
+ * curl https://example.com/wp-json/wc/v1/products/162 \access_token= 
+ * @apiParam {string} token Token.
+ *
+ * @apiSuccess {Number}   id            	The Product-ID.
+ * @apiSuccess {String}   name    			The Product-Name.
+ * @apiSuccess {String}   description   	The Product-Description.
+ * @apiSuccess {String}   short_description The Product-short description
+ * @apiSuccess {Number}   price				The Product-Price
+ * @apiSuccess {Number}   regular_price		The Product-regular price
+ * @apiSuccess {Object[]} images			The Product-Images
+ * @apiSuccess {Number}   images.id			The Product-Images ID
+ * @apiSuccess {Number}   images.src		The Product-Images src
+ *
+ * @apiError NoAccessRight Only authenticated Customers and Admins can access the data.
+ * @apiError ProductNotFound   The <code>id</code> of the Product was not found.
+ *
+ * @apiUse NotFoundError
+ */
+
+ function GetProduct() { return; }
+
+/**
+ * @api {post} /wp-json/wc/v1/products?access_token=:token Add new Product
+ * @apiVersion 0.0.1
+ * @apiName PostProdcut
+ * @apiGroup Product
+ * @apiPermission admin
+ *
+ * @apiDescription In this case "apiErrorStructure" is defined and used.
+ * Define blocks with params that will be used in several functions, so you dont have to rewrite them.
+ *
+ * @apiParam {string} token Token.
+ *
+ * @apiParam 	{String}   name    				The Product-Name.
+ * @apiParam 	{String}   description   		The Product-Description.
+ * @apiParam 	{String}   short_description 	The Product-short description
+ * @apiParam 	{Number}   price				The Product-Price
+ * @apiParam 	{Number}   regular_price		The Product-regular price
+ * @apiParam 	{Object[]} images				The Product-Images
+ * @apiParam 	{Number}   images.id			The Product-Images ID
+ * @apiParam 	{Number}   images.src			The Product-Images src
+ *
+ * @apiSuccess {Number}   id            	The Product-ID.
+ * @apiSuccess {String}   name    			The Product-Name.
+ * @apiSuccess {String}   description   	The Product-Description.
+ * @apiSuccess {String}   short_description The Product-short description
+ * @apiSuccess {Number}   price				The Product-Price
+ * @apiSuccess {Number}   regular_price		The Product-regular price
+ * @apiSuccess {Object[]} images			The Product-Images
+ * @apiSuccess {Number}   images.id			The Product-Images ID
+ * @apiSuccess {Number}   images.src		The Product-Images src
+ *
+ * @apiUse NotFoundError
+ */
+
+ function PostProdcut() { return; }
+
+
+
+/**
+ * @api {put} /wp-json/wc/v1/products/:id?access_token=:token Change a Product
+ * @apiVersion 0.0.1
+ * @apiName PutProduct
+ * @apiGroup Product
+ * @apiPermission admin
+ *
+ * @apiDescription This function has same errors like POST /products, but errors not defined again, they were included with "apiErrorStructure"
+ *
+ * @apiParam {String} name Name of the User.
+ *
+ * @apiUse NotFoundError
+ */
+function putProduct(){ return; }
